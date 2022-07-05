@@ -1,0 +1,6 @@
+com\mycompany\server\jaxrs\model\DBNote.class
+com\mycompany\server\jaxrs\service\ServerService.class
+com\mycompany\server\resources\JavaEE8Resource.class
+com\mycompany\server\jaxrs\activator\JaxRsActivator.class
+com\mycompany\server\jaxrs\model\DBList.class
+com\mycompany\server\JAXRSConfiguration.class
