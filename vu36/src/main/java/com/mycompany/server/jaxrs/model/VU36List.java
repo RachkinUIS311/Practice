@@ -5,34 +5,34 @@
 package com.mycompany.server.jaxrs.model;
 
 import java.util.ArrayList;
-import com.mycompany.server.jaxrs.model.DBNote;
+import com.mycompany.server.jaxrs.model.VU36Model;
 /**
  *
  * @author MyPC
  */
-public class DBList {
-    private ArrayList<DBNote> list = new ArrayList<DBNote>();
+public class VU36List {
+    private ArrayList<VU36Model> list = new ArrayList<VU36Model>();
 
-    public DBList() {
+    public VU36List() {
     }
     
-    public DBList(ArrayList<DBNote> list) {
+    public VU36List(ArrayList<VU36Model> list) {
         this.list = list;
     }
 
-    public ArrayList<DBNote> getList() {
+    public ArrayList<VU36Model> getList() {
         return list;
     }
 
-    public void setList(ArrayList<DBNote> list) {
+    public void setList(ArrayList<VU36Model> list) {
         this.list = list;
     }
     
-    public void addEl(DBNote note) {
+    public void addEl(VU36Model note) {
         this.list.add(note);
     }
     
-    public void removeEl(DBNote note) {
+    public void removeEl(VU36Model note) {
         this.list.remove(note);
     }
 

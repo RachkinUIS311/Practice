@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @author MyPC
  */
-public class DBNote {
-    public DBNote() {
+public class VU36Model {
+    public VU36Model() {
     }
     
     @JsonProperty("Key")
@@ -21,7 +21,7 @@ public class DBNote {
     @JsonProperty("Value")
     private String value;
     
-    public DBNote(String key, String value) {
+    public VU36Model(String key, String value) {
         super();
         this.key = key;
         this.value = value;

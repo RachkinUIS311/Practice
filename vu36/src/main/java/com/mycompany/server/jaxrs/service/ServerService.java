@@ -5,8 +5,8 @@
 package com.mycompany.server.jaxrs.service;
 
 //import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mycompany.server.jaxrs.model.DBNote;
-import com.mycompany.server.jaxrs.model.DBList;
+import com.mycompany.server.jaxrs.model.VU36Model;
+import com.mycompany.server.jaxrs.model.VU36List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -30,12 +30,12 @@ public class ServerService {
     @GET
     @Path("/getlist")
     @Produces(MediaType.APPLICATION_JSON)
-    public DBList getJSON ()
+    public VU36List getJSON ()
     {
-        DBList list = new DBList();
+        VU36List list = new VU36List();
         //ArrayList<DBNote> el = new ArrayList<DBNote>();
-        list.addEl(new DBNote("first", "f_text"));
-        list.addEl(new DBNote("second", "s_text"));
+        list.addEl(new VU36Model("first", "f_text"));
+        list.addEl(new VU36Model("second", "s_text"));
         return list;
     }
 }
