@@ -11,6 +11,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.sql.Timestamp;
 //import java.io.File;
 //import java.io.IOException;
 
@@ -34,8 +35,7 @@ public class ServerService {
     {
         VU36List list = new VU36List();
         //ArrayList<DBNote> el = new ArrayList<DBNote>();
-        list.addEl(new VU36Model("first", "f_text"));
-        list.addEl(new VU36Model("second", "s_text"));
+        list.addEl(new VU36Model("05806195", "ДР", "СВ", "2022-04-18 09:00:00+03", "2022-04-25 09:00:00+03", "ЛВЧД_САРАТОВ"));
         return list;
     }
 }

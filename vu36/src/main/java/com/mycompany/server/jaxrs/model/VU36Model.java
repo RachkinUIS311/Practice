@@ -6,46 +6,86 @@ package com.mycompany.server.jaxrs.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.sql.Timestamp;
 
 /**
  *
  * @author MyPC
  */
 public class VU36Model {
+    
+    private String vagnum;
+    private String remtype;
+    private String vag;
+    private String tsn;
+    private String tsk;
+    private String snazv;
+
     public VU36Model() {
     }
     
-    @JsonProperty("Key")
-    private String key;
-    
-    @JsonProperty("Value")
-    private String value;
-    
-    public VU36Model(String key, String value) {
-        super();
-        this.key = key;
-        this.value = value;
+    public VU36Model(String vagnum, String remtype, String vag, String tsn, String tsk, String snazv) {
+        this.vagnum = vagnum;
+        this.remtype = remtype;
+        this.vag = vag;
+        this.tsn = tsn;
+        this.tsk = tsk;
+        this.snazv = snazv;
     }
 
-    public String getKey() {
-        return key;
+    public String getVagnum() {
+        return vagnum;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setVagnum(String vagnum) {
+        this.vagnum = vagnum;
     }
 
-    public String getValue() {
-        return value;
+    public String getRemtype() {
+        return remtype;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setRemtype(String remtype) {
+        this.remtype = remtype;
+    }
+
+    public String getVag() {
+        return vag;
+    }
+
+    public void setVag(String vag) {
+        this.vag = vag;
+    }
+
+    public String getTsn() {
+        return tsn;
+    }
+
+    public void setTsn(String tsn) {
+        this.tsn = tsn;
+    }
+
+    public String getTsk() {
+        return tsk;
+    }
+
+    public void setTsk(String tsk) {
+        this.tsk = tsk;
+    }
+
+    public String getSnazv() {
+        return snazv;
+    }
+
+    public void setSnazv(String snazv) {
+        this.snazv = snazv;
     }
 
     @Override
     public String toString() {
-        return "SimpleProperty{" + "key=" + key + ", value=" + value + '}';
+        return "VU36Model{" + "vagnum=" + vagnum + ", remtype=" + remtype + ", vag=" + vag + ", tsn=" + tsn + ", tsk=" + tsk + ", snazv=" + snazv + '}';
     }
+    
+    
     
 }
