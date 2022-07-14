@@ -4,9 +4,7 @@
  */
 package com.mycompany.server.jaxrs.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import java.sql.Timestamp;
+
 
 /**
  *
