@@ -12,6 +12,7 @@ package com.mycompany.server.jaxrs.model;
  */
 public class VU36Model {
     
+    private int id;
     private String vagnum;
     private String remtype;
     private String vag;
@@ -19,16 +20,12 @@ public class VU36Model {
     private String tsk;
     private String snazv;
 
-    public VU36Model() {
+    public int getId() {
+        return id;
     }
-    
-    public VU36Model(String vagnum, String remtype, String vag, String tsn, String tsk, String snazv) {
-        this.vagnum = vagnum;
-        this.remtype = remtype;
-        this.vag = vag;
-        this.tsn = tsn;
-        this.tsk = tsk;
-        this.snazv = snazv;
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getVagnum() {
@@ -81,9 +78,7 @@ public class VU36Model {
 
     @Override
     public String toString() {
-        return "VU36Model{" + "vagnum=" + vagnum + ", remtype=" + remtype + ", vag=" + vag + ", tsn=" + tsn + ", tsk=" + tsk + ", snazv=" + snazv + '}';
+        return "VU36Model{" + "id=" + id + ", vagnum=" + vagnum + ", remtype=" + remtype + ", vag=" + vag + ", tsn=" + tsn + ", tsk=" + tsk + ", snazv=" + snazv + '}';
     }
-    
-    
-    
+
 }

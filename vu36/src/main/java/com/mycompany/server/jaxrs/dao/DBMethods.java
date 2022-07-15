@@ -27,7 +27,7 @@ public class DBMethods {
         Statement stmt = conn.createStatement();
         StringBuilder query = new StringBuilder();
         
-        query.append(" select vu_36.vagnum, nsi.nsi_type as remtype, t1.nsi_type as vag, vu_36.tsn, vu_36.tsk, vu_36.snazv ");
+        query.append(" select vu_36.id,vu_36.vagnum, nsi.nsi_type as remtype, t1.nsi_type as vag, vu_36.tsn, vu_36.tsk, vu_36.snazv ");
         query.append(" from vu_36 ");
         query.append(" inner join nsi on remtype = nsi_kod and nsi_spr = 86 ");
         query.append(" inner join nsi as t1 on vagtype = t1.nsi_kod and t1.nsi_spr= 34 ");
@@ -37,6 +37,7 @@ public class DBMethods {
         VU36List list = new VU36List();
         while (rs.next()) {
             VU36Model model = new VU36Model();
+            model.setId(rs.getInt("id"));
             model.setVagnum(rs.getString("vagnum"));
             model.setRemtype(rs.getString("remtype"));
             model.setVag(rs.getString("vag"));
