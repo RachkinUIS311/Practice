@@ -1,13 +1,17 @@
-const vu_36List = '';
-(async () => {
-    let url = '';
-    let response = await fetch(url);
-    list = await response.json();
-
-})()
+let vu_36List = {};
 
 const tbodyStart = document.getElementById('tbodyId');
-vu_36List.forEach(tableField => {
+
+
+(async () => {
+    let url = 'http://localhost:8080/server/vu36/getlist';
+    let response = await fetch(url);
+    vu_36List = await response.json();
+    renderTable();
+})()
+
+function renderTable() {
+    vu_36List.list.forEach(tableField => {
     let tableRow = `
             <tr>
             <td>${tableField.vagnum}</td>
@@ -19,4 +23,5 @@ vu_36List.forEach(tableField => {
             </tr>
             `
     tbodyStart.insertAdjacentHTML('beforeEnd', tableRow);
-})
+})}
+
