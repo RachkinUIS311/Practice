@@ -41,8 +41,8 @@ public class DBMethods {
             model.setVagnum(rs.getString("vagnum"));
             model.setRemtype(rs.getString("remtype"));
             model.setVag(rs.getString("vag"));
-            model.setTsn(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(rs.getTimestamp("tsn")));
-            model.setTsk(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(rs.getTimestamp("tsk")));
+            model.setTsn(new SimpleDateFormat("dd.MM.yyyy HH:mm").format(rs.getTimestamp("tsn")));
+            model.setTsk(new SimpleDateFormat("dd.MM.yyyy HH:mm").format(rs.getTimestamp("tsk")));
             model.setSnazv(rs.getString("snazv"));
             list.addEl(model);
         }
@@ -64,11 +64,12 @@ public class DBMethods {
         Statement stmt = conn.createStatement();
         StringBuilder query = new StringBuilder();
         
-        query.append(" select vu_36.id, vu_36.vagnum, nsi.nsi_fname, vu_36.tsn, vu_36.tsk, vu_36.nazv ");
+        query.append(" select vu_36.id, vu_36.vagnum, nsi.nsi_fname, t1.nsi_type as vag, vu_36.tsn, vu_36.tsk, vu_36.nazv ");
         query.append(" from vu_36 ");
         query.append(" inner join nsi on remtype = nsi_kod and nsi_spr = 86 and vu_36.tsk between nsi.nsi_datan and nsi.nsi_datak ");
         query.append(" inner join nsi as t1 on vagtype = t1.nsi_kod and t1.nsi_spr= 34 and vu_36.tsk between t1.nsi_datan and t1.nsi_datak ");
-        query.append(" where vu_36.id = " + id);
+        query.append(" where vu_36.id = ");
+        query.append(id);
         ResultSet rs = stmt.executeQuery(query.toString());
         
         VU36Model doc = new VU36Model();
@@ -76,8 +77,9 @@ public class DBMethods {
             doc.setId(rs.getInt("id"));
             doc.setVagnum(rs.getString("vagnum"));
             doc.setRemtype(rs.getString("nsi_fname"));
-            doc.setTsn(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(rs.getTimestamp("tsn")));
-            doc.setTsk(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(rs.getTimestamp("tsk")));
+            doc.setVag(rs.getString("vag"));
+            doc.setTsn(new SimpleDateFormat("dd.MM.yyyy HH:mm").format(rs.getTimestamp("tsn")));
+            doc.setTsk(new SimpleDateFormat("dd.MM.yyyy HH:mm").format(rs.getTimestamp("tsk")));
             doc.setSnazv(rs.getString("nazv"));
         }
         
