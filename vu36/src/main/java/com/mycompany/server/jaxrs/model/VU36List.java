@@ -41,5 +41,4 @@ public class VU36List {
         return "DBList{" + "list=" + list + '}';
     }
     
-    
 }

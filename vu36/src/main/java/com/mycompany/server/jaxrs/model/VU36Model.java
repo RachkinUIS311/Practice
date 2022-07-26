@@ -4,8 +4,6 @@
  */
 package com.mycompany.server.jaxrs.model;
 
-
-
 /**
  *
  * @author MyPC
@@ -20,6 +18,22 @@ public class VU36Model {
     private String tsk;
     private String snazv;
 
+    public VU36Model() {
+    }
+
+    
+    
+    public VU36Model(int id, String vagnum, String remtype, String vag, String tsn, String tsk, String snazv) {
+        this.id = id;
+        this.vagnum = vagnum;
+        this.remtype = remtype;
+        this.vag = vag;
+        this.tsn = tsn;
+        this.tsk = tsk;
+        this.snazv = snazv;
+    }
+
+    
     public int getId() {
         return id;
     }
